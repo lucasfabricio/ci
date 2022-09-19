@@ -13,5 +13,6 @@ steps:
 - task: UsePythonVersion@0
   displayName: 'Executando script de criar pull request'
   inputs:
-    scriptSource: 'criar-pull-request1.py'
+    scriptSource: 'filePath'
+    scriptPath: 'criar-pull-request.py'
     arguments: ${{ parameters.branch }}
