@@ -1,5 +1,5 @@
 trigger:
-  - master
+- master
 
 parameters:
   - name: branch
@@ -14,4 +14,4 @@ steps:
   displayName: 'Executando script de criar pull request'
   inputs:
     scriptSource: 'criar-pull-request.py'
-    arguments: {{ parameters.branch }}
+    arguments: ${{ parameters.branch }}
