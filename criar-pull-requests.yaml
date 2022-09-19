@@ -1,0 +1,17 @@
+trigger:
+  - master
+
+parameters:
+  - name: branch
+    displayName: Nome da branch
+    type: string
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: UsePythonVersion@0
+  displayName: 'Executando script de criar pull request'
+  inputs:
+    scriptSource: 'criar-pull-request.py'
+    arguments: {{ parameters.branch }}
