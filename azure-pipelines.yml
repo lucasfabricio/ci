@@ -15,11 +15,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '$(python.version)'
-  displayName: 'Use Python $(python.version)'
-
 - script: |
     criar-pull-requests.py ${{ parameters.branch }}
   displayName: 'Executar script'
