@@ -13,5 +13,5 @@ steps:
 - task: PythonScript@0
   inputs:
     scriptSource: 'filePath'
-    scriptPath: '$(System.DefaultWorkingDirectory)/.git/criar-pull-request.py'
+    scriptPath: $(System.DefaultWorkingDirectory)/.git/criar-pull-request.py
     arguments: '${{ parameters.branch }}'
