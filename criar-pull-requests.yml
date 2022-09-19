@@ -14,5 +14,5 @@ steps:
   displayName: 'Executando script de criar pull request'
   inputs:
     scriptSource: 'filePath'
-    scriptPath: 'criar-pull-request.py'
+    scriptPath: 'criar-pull-request1.py'
     arguments: ${{ parameters.branch }}
