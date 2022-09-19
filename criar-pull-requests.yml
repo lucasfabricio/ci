@@ -10,6 +10,9 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: CmdLine@2
+  inputs:
+    script: 'ls'
 - task: PythonScript@0
   inputs:
     scriptSource: 'filePath'
