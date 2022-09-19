@@ -22,4 +22,4 @@ steps:
 
 - script: |
     criar-pull-requests.py ${{ parameters.branch }}
-  displayName: 'pytest'
+  displayName: 'Executar script'
