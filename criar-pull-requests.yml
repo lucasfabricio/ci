@@ -10,9 +10,8 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: UsePythonVersion@0
-  displayName: 'Executando script de criar pull request'
+- task: PythonScript@0
   inputs:
     scriptSource: 'filePath'
-    scriptPath: 'criar-pull-request1.py'
-    arguments: ${{ parameters.branch }}
+    scriptPath: 'criar-pull-request.py'
+    arguments: '${{ parameters.branch }}'
