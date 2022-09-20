@@ -11,23 +11,19 @@ pool:
 
 steps:
 - task: UsePythonVersion@0
+  displayName: 'Selecionando a versão 3.7 do Python'
   inputs:
     versionSpec: '3.7'
     addToPath: true
     architecture: 'x64'
-- task: PythonScript@0
+- task: DownloadPipelineArtifact@2
+  displayName: 'Instalando GitPython'
   inputs:
-    scriptSource: 'inline'
-    script: |
-      import sys
-      
-      name = 'GitPython'
-      
-      if name in sys.modules:
-          print(f"{name!r} already in sys.modules")
-      else:
-          print(f"can't find the {name!r} module")
+    buildType: 'current'
+    artifactName: 'GitPython'
+    targetPath: '$(Pipeline.Workspace)'
 - task: PythonScript@0
+  displayName: 'Executando script'
   inputs:
     scriptSource: 'filePath'
     scriptPath: criar-pull-requests.py
