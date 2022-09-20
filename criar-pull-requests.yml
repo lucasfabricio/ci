@@ -10,6 +10,23 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.7'
+    addToPath: true
+    architecture: 'x64'
+- task: PythonScript@0
+  inputs:
+    scriptSource: 'inline'
+    script: |
+      import sys
+      
+      name = 'GitPython'
+      
+      if name in sys.modules:
+          print(f"{name!r} already in sys.modules")
+      else:
+          print(f"can't find the {name!r} module")
 - task: PythonScript@0
   inputs:
     scriptSource: 'filePath'
