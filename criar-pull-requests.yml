@@ -16,12 +16,10 @@ steps:
     versionSpec: '3.7'
     addToPath: true
     architecture: 'x64'
-- task: DownloadPipelineArtifact@2
+- task: CmdLine@2
   displayName: 'Instalando GitPython'
   inputs:
-    buildType: 'current'
-    artifactName: 'GitPython'
-    targetPath: '$(Pipeline.Workspace)'
+    script: 'pip install GitPython'
 - task: PythonScript@0
   displayName: 'Executando script'
   inputs:
